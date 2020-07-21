@@ -9,15 +9,15 @@ public class Menu {
 		boolean isEnd = false;
 
 		do {
-			displayRecords();
-			displayMenu();
+			displayRecords(); // calling methods to display records
+			displayMenu(); //calling methods for display menu
 
 			System.out.println("\nchoice: ");
 			String choice = input.nextLine();
 
 			switch (choice) {
 			case "1":
-				System.out.println("______________________________________________\n\t\t- Menu -\n");
+				System.out.println("______________________________________________\n\t\t- Menu -\n"); // format line for the display menu
 				System.out.println(
 						"\nEnter record in this order : FirstName LastName,Street address, city,state, zipcode, phoneNumber: ");
 				String newRecord = input.nextLine();
@@ -48,6 +48,7 @@ public class Menu {
 				System.out.println("______________________________________________\n\t\t- Menu -\n");
 				System.out.println("Find record by First Name:");
 				String firstName = input.nextLine();
+	
 				Directory.getByFirstName(firstName);
 
 				System.out.println("\nThe client information: ");
@@ -157,13 +158,17 @@ public class Menu {
 		System.out.println("\nWelcome to My Phone Book Directory Application.");
 
 		System.out.println("______________________________________________\n\t\t- Directory -\n");
-
+		
 		for (int i = 0; i < Directory.currentDirectory.length; i++) {
+			Directory.sortCurrentDirectory(Directory.currentDirectory);
 			if (Directory.currentDirectory[i] == null) {
+				
 				System.out.println("--");
 				
 			} else {
+				
 				System.out.println((i + 1) + ". " + (Directory.currentDirectory[i]));
+				
 				
 	
 			}

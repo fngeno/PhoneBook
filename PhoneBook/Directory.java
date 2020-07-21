@@ -57,7 +57,9 @@ public class Directory {
 		int counter = 0;
 		// loop through the original array to find out the size of the new array.
 		for (int i = 0; i < currentDirectory.length; i++) {
+			System.out.println(currentDirectory[i].getFirstName());
 			if (currentDirectory[i].getFirstName().equalsIgnoreCase(firstName)) {
+
 				counter++; // track the index of the new array
 			}
 		}
@@ -79,19 +81,18 @@ public class Directory {
 
 	public static Person[] getByLastName(String lastName) {
 
-		// Person[] newArray = new Person[currentDirectory.length];
 		int counter = 0;
-		// loop through the original array to find out the size of the new array.
+
 		for (int i = 0; i < currentDirectory.length; i++) {
+			System.out.println(currentDirectory[i].getLastName());
 			if (currentDirectory[i].getLastName().equalsIgnoreCase(lastName)) {
-				counter++; // track the index of the new array
+				counter++;
 			}
 		}
-		// create the size of the array based on the size of the counter
+
 		Person[] newArray = new Person[counter];
 		int x = 0;
-		// loops through adding each new person to the new array and increasing the x
-		// variable
+
 		for (int j = 0; j < currentDirectory.length; j++) {
 			if (currentDirectory[j].getLastName().equalsIgnoreCase(lastName)) {
 				newArray[x] = currentDirectory[j];
@@ -115,12 +116,12 @@ public class Directory {
 
 	public static void sortCurrentDirectory(Person[] currentDirectory) {
 		Person temp;
-		for (int i = 0; i < Directory.currentDirectory.length; i++) { // sort the full names in order.
-			for (int j = i + 1; j < Directory.currentDirectory.length; j++) {
-				if (currentDirectory[i].getFullName().compareTo(currentDirectory[i].getFullName()) > 0) {
+		for (int i = 0; i < currentDirectory.length; i++) { // sort the first name with first letter as capital letter.
+			for (int j = i + 1; j < currentDirectory.length; j++) {
+				if (currentDirectory[i].getFullName().compareTo(currentDirectory[j].getFullName()) > 0) {
 					temp = currentDirectory[i];
-					currentDirectory[i] = currentDirectory[i];
-					currentDirectory[i] = temp;
+					currentDirectory[i] = currentDirectory[j];
+					currentDirectory[j] = temp;
 				}
 
 			}

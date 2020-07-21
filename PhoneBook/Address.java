@@ -52,7 +52,7 @@ public class Address {
 
 	@Override
 	public String toString() {
-		return streetName + ", " + city + ", " + state + ", " + zipCode; // needed for contact address
+		return streetName + ", " + city + ", " + state + ", " + zipCode; // overriding method for the address from address class
 	}
 
 }
